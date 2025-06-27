@@ -20,6 +20,12 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(8);
   });
 
+  it("never makes quality negative", function() {
+    items = [ new Item("Elixir of the Mongoose", 5, 0) ];
+    update_quality();
+    expect(items[0].quality).toEqual(0); // Qualität bleibt bei 0
+  });
+
 
 
 
